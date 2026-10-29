@@ -1,0 +1,202 @@
+.hero-sculpture {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  isolation: isolate;
+}
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.hero-scene canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.sculpture-static {
+  position: absolute;
+  inset: 12% 8%;
+  perspective: 950px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.hero-sculpture.is-ready .sculpture-static {
+  opacity: 0;
+}
+.sculpture-panel,
+.sculpture-block {
+  position: absolute;
+  border: 1px solid rgba(200, 219, 255, 0.27);
+  border-radius: 7px;
+  transform: rotateX(9deg) rotateY(-27deg) rotateZ(-6deg);
+  box-shadow:
+    13px 17px 0 rgba(0, 0, 0, 0.08),
+    inset -4px -3px 0 rgba(0, 0, 0, 0.1);
+}
+.sculpture-panel--back {
+  left: 37%;
+  top: 2%;
+  width: 54%;
+  height: 77%;
+  background: rgba(153, 173, 195, 0.13);
+}
+.sculpture-panel--blue {
+  left: 19%;
+  top: 18%;
+  width: 60%;
+  height: 66%;
+  background: linear-gradient(130deg, #507cf0, #2854d1 70%);
+}
+.sculpture-panel--front {
+  left: 8%;
+  top: 58%;
+  width: 54%;
+  height: 40%;
+  background: linear-gradient(135deg, #edf0eb, #bbc5d2);
+}
+.sculpture-panel i,
+.sculpture-panel span {
+  position: absolute;
+  display: block;
+  border-radius: 1px;
+}
+.sculpture-panel--back i {
+  left: 12%;
+  height: 3px;
+  width: 52%;
+  background: #9eafc5;
+  opacity: 0.55;
+}
+.sculpture-panel--back i:nth-child(1) {
+  top: 12%;
+  width: 30%;
+}
+.sculpture-panel--back i:nth-child(2) {
+  top: 69%;
+}
+.sculpture-panel--back i:nth-child(3) {
+  top: 78%;
+  width: 43%;
+}
+.sculpture-panel--blue i {
+  left: 11%;
+  height: 4px;
+  background: #dae5ff;
+}
+.sculpture-panel--blue i:nth-child(1) {
+  top: 13%;
+  width: 33%;
+}
+.sculpture-panel--blue i:nth-child(2) {
+  top: 78%;
+  width: 66%;
+}
+.sculpture-panel--blue span:nth-child(3) {
+  left: 11%;
+  top: 34%;
+  width: 39%;
+  height: 29%;
+  background: #d5e2f9;
+}
+.sculpture-panel--blue span:nth-child(4) {
+  left: 59%;
+  top: 36%;
+  width: 29%;
+  height: 4px;
+  background: #d5e2f9;
+  box-shadow:
+    0 14px 0 #83a5f5,
+    0 28px 0 #83a5f5;
+}
+.sculpture-panel--front i {
+  top: 17%;
+  height: 4px;
+  background: #4668d0;
+}
+.sculpture-panel--front i:nth-child(1) {
+  left: 12%;
+  width: 29%;
+}
+.sculpture-panel--front i:nth-child(2) {
+  right: 12%;
+  width: 8%;
+  background: #9ba9bf;
+}
+.sculpture-panel--front span:nth-child(3) {
+  left: 12%;
+  top: 41%;
+  width: 30%;
+  height: 39%;
+  background: #315add;
+}
+.sculpture-panel--front span:nth-child(4) {
+  left: 53%;
+  top: 43%;
+  width: 31%;
+  height: 4px;
+  background: #98a5b8;
+  box-shadow: 0 15px 0 #98a5b8;
+}
+.sculpture-panel--front span:nth-child(5) {
+  left: 53%;
+  top: 72%;
+  width: 18%;
+  height: 4px;
+  background: #4564bd;
+}
+.sculpture-block {
+  width: 13%;
+  aspect-ratio: 1;
+}
+.sculpture-block--one {
+  left: 86%;
+  top: 69%;
+  background: #3863e0;
+}
+.sculpture-block--two {
+  left: 5%;
+  top: 14%;
+  width: 10%;
+  background: #d4dfed;
+}
+.sculpture-block:after {
+  content: "";
+  position: absolute;
+  inset: 35%;
+  background: #dce6fa;
+}
+.sculpture-block--two:after {
+  background: #4267d5;
+}
+.sculpture-link {
+  position: absolute;
+  height: 1px;
+  background: #7489b3;
+  transform: rotate(-6deg);
+  opacity: 0.6;
+}
+.sculpture-link--one {
+  top: 76%;
+  left: 78%;
+  width: 10%;
+}
+.sculpture-link--two {
+  top: 30%;
+  left: 10%;
+  width: 13%;
+}
+@media (max-width: 700px) {
+  .hero-sculpture {
+    min-height: 280px;
+  }
+  .sculpture-static {
+    inset: 6% 13%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sculpture-static {
+    transition: none;
+  }
+}
