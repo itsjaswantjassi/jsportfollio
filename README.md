@@ -1,7 +1,7 @@
 # Jaswant Singh — Web & AI Developer
 
-A responsive portfolio built with React, TypeScript, Vite, GSAP ScrollTrigger,
-and a lazy-loaded Three.js hero sculpture. Project illustrations are explicitly
+A responsive portfolio built with React, TypeScript, Vite, and GSAP ScrollTrigger,
+with a full-background portrait hero and an animated name. Project illustrations are explicitly
 labeled placeholders until real screenshots are supplied. Resume facts and
 links come from the supplied PDF.
 
@@ -54,9 +54,12 @@ visible chapter. Project disclosures use native `details`/`summary` and work
 with Enter/Space. Mobile navigation supports Escape and returns focus to Menu.
 There is a skip link and visible focus styling.
 
-Reduced motion removes the animated reveals/crossover and uses a static CSS
-sculpture. WebGL also falls back on small touch devices, save-data, unsupported
-WebGL, or errors. The 3D module loads separately, caps DPR at 1.5, pauses
-offscreen/when the tab is hidden, and settles ambient movement within 4.5
-seconds. The scene then renders only in response to limited pointer movement.
-Essential content loads independently of the 3D scene.
+The hero uses an optimized copy of the original portrait without changing facial
+features. Its single name headline moves gently left and right; visitors can
+pause or resume it with the visible motion control. The animation pauses when
+the banner is offscreen or the tab is hidden. Reduced motion keeps the headline
+static and removes the animated reveals/crossover. The current hero requires no
+WebGL or external image service.
+
+Edit `src/components/PortraitHero.tsx` and its scoped `portrait-hero.css` for hero
+content and styling. Its photo is `public/images/banner-original.webp`.

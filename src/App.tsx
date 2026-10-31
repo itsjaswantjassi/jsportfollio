@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import HeroSculpture from "./components/HeroSculpture";
+import PortraitHero from "./components/PortraitHero";
 import ProjectPreview from "./components/ProjectPreview";
 import {
   capabilities,
@@ -188,29 +188,6 @@ export default function App() {
     const media = gsap.matchMedia();
     media.add("(prefers-reduced-motion: no-preference)", () => {
       const context = gsap.context(() => {
-        gsap.fromTo(
-          ".hero-title-line > span",
-          { yPercent: 104 },
-          {
-            yPercent: 0,
-            duration: 0.9,
-            ease: "power3.out",
-            stagger: 0.1,
-            delay: 0.08,
-          },
-        );
-        gsap.fromTo(
-          ".hero-intro, .hero-actions",
-          { y: 14, opacity: 0.5 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            ease: "power3.out",
-            stagger: 0.09,
-            delay: 0.24,
-          },
-        );
         gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
           gsap.fromTo(
             element,
@@ -258,7 +235,7 @@ export default function App() {
   }, []);
 
   return (
-    <div ref={appRef} className="portfolio">
+    <div ref={appRef} className="portfolio portfolio--portrait">
       <a className="skip-link" href="#main">
         Skip to content
       </a>
@@ -320,76 +297,7 @@ export default function App() {
       </header>
 
       <main id="main" tabIndex={-1}>
-        <section
-          className="hero dark-section"
-          id="home"
-          aria-labelledby="hero-title"
-        >
-          <div className="hero-main frame">
-            <div className="hero-copy">
-              <div className="hero-identity">
-                <span className="location-dot" aria-hidden="true" />
-                New Delhi, India <span className="identity-separator" />{" "}
-                Independent thinking. Connected systems.
-              </div>
-              <h1 id="hero-title">
-                <span className="hero-title-line">
-                  <span>Thoughtful websites.</span>
-                </span>
-                <span className="hero-title-line">
-                  <span>Practical AI.</span>
-                </span>
-              </h1>
-              <p className="hero-intro">
-                I’m Jaswant, a web & AI developer. I build WordPress websites,
-                Shopify stores, and custom web experiences that make technology
-                useful.
-              </p>
-              <div className="hero-actions">
-                <a className="button button--blue" href="#work">
-                  View projects <Arrow down />
-                </a>
-                <a className="resume-link" href={profile.resumeUrl} download>
-                  Download resume{" "}
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                      d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div className="hero-art">
-              <HeroSculpture />
-              <div className="sculpture-caption">
-                <span className="sculpture-swatch" />
-                <span>Interfaces. Commerce. Intelligence.</span>
-              </div>
-            </div>
-          </div>
-          <div className="hero-bottom frame">
-            <div className="hero-proof">
-              <p>
-                <strong>Nearly 4 years</strong>
-                <span>of turning ideas into working websites</span>
-              </p>
-              <p>
-                <strong>100+ websites</strong>
-                <span>delivered across industries</span>
-              </p>
-            </div>
-            <a href="#work" className="scroll-link">
-              A selection of what I build{" "}
-              <span>
-                <Arrow down />
-              </span>
-            </a>
-          </div>
-        </section>
+        <PortraitHero />
 
         <section
           className="work-section section-pad"
