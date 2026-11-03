@@ -3,8 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PortraitHero from "./components/PortraitHero";
 import SelectedWork from "./components/SelectedWork";
+import Capabilities from "./components/Capabilities";
 import {
-  capabilities,
   education,
   experience,
   profile,
@@ -222,50 +222,7 @@ export default function App() {
           </p>
         </section>
 
-        <section
-          className="capabilities-section section-pad frame"
-          id="capabilities"
-          aria-labelledby="capabilities-title"
-        >
-          <div className="section-heading" data-reveal>
-            <h2 id="capabilities-title">
-              Built around
-              <br />
-              what you need.
-            </h2>
-            <p>
-              A solid website is the start. <br />
-              What it can do is where it gets interesting.
-            </p>
-          </div>
-          <div className="capability-list">
-            {capabilities.map((capability, index) => (
-              <article
-                className="capability-row"
-                key={capability.title}
-                data-reveal
-              >
-                <div
-                  className={`capability-symbol capability-symbol--${index}`}
-                  aria-hidden="true"
-                >
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <h3>{capability.title}</h3>
-                <div>
-                  <p>{capability.description}</p>
-                  <ul className="capability-skills">
-                    {capability.skills.map((skill) => (
-                      <li key={skill}>{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        <Capabilities />
 
         <section
           className="experience-section section-pad"
