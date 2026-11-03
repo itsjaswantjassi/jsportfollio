@@ -2,9 +2,9 @@
 
 Experience: Jaswant's work connects websites, commerce and practical AI. Layered interface panels become the hero sculpture; project chapters unfold like an edited body of work.
 
-Palette: charcoal #202121, paper #f6f5f1, ink #202121, muted #646760, cobalt #2454e6, cool surface #e8edf5. Cobalt identifies actions and the architectural sculpture.
+Palette below the hero: navy #0c1b33, white #ffffff, cobalt #2454e6, light blue #adc6ff, pale blue #edf3ff. Work and experience use navy fields with white headings and #c2cee2 secondary text. Capabilities and about use white with navy ink and #4f6079 secondary text. Blue connects the crossover and contact sections; the footer returns to navy. Scoped tokens in src/content-theme.css keep the portrait hero and header unchanged. Individual project illustrations retain their own palettes.
 Type: self-hosted Inter Variable with system sans-serif fallback. Large close-set headlines, 16–18px body, clear tabular dates, no decorative typefaces.
-Frame: equal fluid margins, max 1328px. Hero text at left and sculpture at right; warm project field follows immediately. A compact desktop index anchors alternating, asymmetric chapters. A separate typographic crossover leads into three capability rows. Experience, about, education, then a cobalt contact close.
+Frame below the hero: equal fluid margins, max 1328px. A navy project field follows immediately. A compact desktop index anchors alternating, asymmetric chapters. A blue typographic crossover leads into three white capability rows. Navy experience, white about and education, then a cobalt contact close. Existing layouts, spacing, content, and interactions are preserved.
 Motion: native scrolling, one hero line entrance, small once-only reveals, bounded crossover text, subtle sculpture response. Reduced motion is static. Default content stays visible if motion cannot initialize.
 
 Brief-specific exceptions to taste-skill defaults: project chapter numbers, subtle borders, an abstract architectural 3D object, explicitly labeled preview placeholders, oversized WEB / COMMERCE / AI, and the supplied Inter, charcoal/off-white/cobalt palette are requested by the user.

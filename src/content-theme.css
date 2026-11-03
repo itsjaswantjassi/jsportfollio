@@ -1,0 +1,175 @@
+/* The palette starts below PortraitHero. Hero and header keep their own styles. */
+.portfolio-content,
+.site-footer {
+  --content-navy: #0c1b33;
+  --content-navy-surface: #172e50;
+  --content-white: #ffffff;
+  --content-blue: #2454e6;
+  --content-blue-hover: #1941c4;
+  --content-blue-light: #adc6ff;
+  --content-pale: #edf3ff;
+  --content-text-light: #c2cee2;
+  --content-line-dark: #304460;
+  --paper: var(--content-white);
+  --ink: var(--content-navy);
+  --muted: #4f6079;
+  --cobalt: var(--content-blue);
+  --cobalt-hover: var(--content-blue-hover);
+  --line: #d7e1f0;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.portfolio-content ::selection,
+.site-footer ::selection {
+  background: var(--content-blue-light);
+  color: var(--content-navy);
+}
+
+.portfolio-content :focus-visible,
+.site-footer :focus-visible {
+  outline-color: var(--cobalt);
+}
+
+.portfolio-content .text-link {
+  color: var(--cobalt);
+}
+
+.portfolio-content .text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* Dark editorial chapters, with a lighter blue for actions on navy. */
+.portfolio-content .work-section,
+.portfolio-content .experience-section {
+  --paper: var(--content-navy);
+  --ink: var(--content-white);
+  --muted: var(--content-text-light);
+  --cobalt: var(--content-blue-light);
+  --line: var(--content-line-dark);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.portfolio-content .tech-list > li {
+  background: var(--content-navy-surface);
+  color: var(--content-pale);
+}
+
+.portfolio-content .project-media figcaption > span:first-child {
+  color: var(--content-white);
+}
+
+.portfolio-content .project-visual {
+  background: var(--content-pale);
+}
+
+/* Project illustrations retain the original projects' individual palettes. */
+.portfolio-content .preview-drawing {
+  --paper: #f6f5f1;
+  --ink: #202121;
+  --muted: #646760;
+  --cobalt: var(--content-blue);
+  color: var(--ink);
+}
+
+.portfolio-content .project-index > a[aria-current],
+.portfolio-content .project-index > a:hover,
+.portfolio-content .project-details > summary:hover {
+  color: var(--content-blue-light);
+}
+
+/* A saturated blue interlude connects the work to the expertise section. */
+.portfolio-content .crossover {
+  color: var(--content-white);
+  background: var(--content-blue);
+}
+
+.portfolio-content .crossover-line--one {
+  color: var(--content-blue-light);
+}
+
+.portfolio-content .crossover-line--two {
+  color: var(--content-white);
+}
+
+.portfolio-content .crossover > p {
+  color: var(--content-white);
+  background: var(--content-blue);
+}
+
+.portfolio-content .capability-skills {
+  color: var(--content-blue-hover);
+}
+
+.portfolio-content .capability-symbol i {
+  border-color: var(--content-blue);
+}
+
+.portfolio-content .capability-symbol--0 i:nth-child(2) {
+  background: var(--content-pale);
+}
+
+.portfolio-content .capability-symbol--2 i:nth-child(3) {
+  background: var(--content-blue);
+}
+
+.portfolio-content .experience-item {
+  border-color: var(--line);
+}
+
+.portfolio-content .job-company {
+  color: var(--content-blue-light);
+}
+
+.portfolio-content .job-period {
+  color: var(--content-text-light);
+}
+
+.portfolio-content .about-name-art {
+  color: var(--content-navy);
+}
+
+/* The blue close and navy footer finish the same palette. */
+.portfolio-content .contact-section {
+  background: var(--content-blue);
+  color: var(--content-white);
+}
+
+.portfolio-content .contact-bottom > p,
+.portfolio-content .contact-links > div {
+  color: var(--content-pale);
+}
+
+.portfolio-content .contact-section a:hover {
+  color: var(--content-white);
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.portfolio-content .contact-section :focus-visible {
+  outline-color: var(--content-white);
+}
+
+.site-footer {
+  --cobalt: var(--content-blue-light);
+  color: var(--content-text-light);
+  background: var(--content-navy);
+}
+
+.site-footer .footer-name {
+  color: var(--content-white);
+}
+
+.site-footer .footer-name > span,
+.site-footer > .frame > span {
+  color: var(--content-text-light);
+}
+
+@media (max-width: 680px) {
+  .site-footer > .frame > span {
+    border-color: var(--content-line-dark);
+  }
+}

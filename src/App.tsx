@@ -2,15 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PortraitHero from "./components/PortraitHero";
-import ProjectPreview from "./components/ProjectPreview";
+import SelectedWork from "./components/SelectedWork";
 import {
   capabilities,
   education,
   experience,
   profile,
-  projects,
 } from "./data/portfolio";
-import type { Project } from "./data/portfolio";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,90 +45,9 @@ function Arrow({
   );
 }
 
-function ProjectDetails({ project }: { project: Project }) {
-  return (
-    <details className="project-details">
-      <summary>
-        <span>Behind the project</span>
-        <span className="plus" aria-hidden="true" />
-      </summary>
-      <div className="project-detail-body">
-        <div>
-          <h4>The purpose</h4>
-          <p>{project.purpose}</p>
-        </div>
-        <div>
-          <h4>My contribution</h4>
-          <p>{project.contribution}</p>
-        </div>
-        <div>
-          <h4>The outcome</h4>
-          <p>{project.outcome}</p>
-        </div>
-      </div>
-    </details>
-  );
-}
-
-function FeaturedProject({ project }: { project: Project }) {
-  return (
-    <article
-      className={`project-chapter project-chapter--${project.preview}`}
-      id={project.id}
-      aria-labelledby={`${project.id}-title`}
-    >
-      <div className="project-chapter-top">
-        <span className="chapter-number">{project.number}</span>
-        <span>{project.category}</span>
-      </div>
-      <div className="project-composition">
-        <div className="project-copy" data-reveal>
-          <h3 id={`${project.id}-title`}>{project.title}</h3>
-          <p className="project-summary">{project.summary}</p>
-          <ul
-            className="tech-list"
-            aria-label={`${project.title} technologies`}
-          >
-            {project.technologies.map((tech) => (
-              <li key={tech}>{tech}</li>
-            ))}
-          </ul>
-          <div className="project-actions">
-            {project.url ? (
-              <a
-                className="text-link"
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit live site <Arrow diagonal />
-                <span className="sr-only">
-                  {" "}
-                  for {project.title} (opens in a new tab)
-                </span>
-              </a>
-            ) : (
-              <span className="project-type-note">
-                Custom plugin & integration
-              </span>
-            )}
-          </div>
-          <ProjectDetails project={project} />
-        </div>
-        <div className="project-preview-wrap" data-reveal>
-          <ProjectPreview project={project} />
-        </div>
-      </div>
-    </article>
-  );
-}
-
 export default function App() {
   const appRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeProject, setActiveProject] = useState(projects[0].id);
-  const featured = projects.filter((project) => project.featured);
-  const archive = projects.filter((project) => !project.featured);
 
   // React mounts after the browser's first attempt to resolve an incoming hash.
   // Restore direct links to project chapters without animating the initial visit.
@@ -146,22 +63,6 @@ export default function App() {
       }
     });
     return () => window.cancelAnimationFrame(frame);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) setActiveProject(visible[0].target.id);
-      },
-      { rootMargin: "-15% 0px -40% 0px", threshold: [0, 0.15, 0.4] },
-    );
-    document
-      .querySelectorAll(".project-chapter, #more-work")
-      .forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -299,125 +200,8 @@ export default function App() {
       <main id="main" tabIndex={-1}>
         <PortraitHero />
 
-        <section
-          className="work-section section-pad"
-          id="work"
-          aria-labelledby="work-title"
-        >
-          <div className="frame">
-            <div className="section-heading work-heading" data-reveal>
-              <h2 id="work-title">
-                Selected work<span className="heading-period">.</span>
-              </h2>
-              <p>
-                Different businesses. <br />
-                The same care in the details.
-              </p>
-            </div>
-            <div className="work-layout">
-              <aside className="work-sidebar">
-                <nav className="project-index" aria-label="Project index">
-                  <span className="index-label">Explore the work</span>
-                  {featured.map((project) => (
-                    <a
-                      key={project.id}
-                      href={`#${project.id}`}
-                      aria-current={
-                        activeProject === project.id ? "location" : undefined
-                      }
-                    >
-                      <span>{project.number}</span>
-                      <span>
-                        {project.id === "wordpress-business-assistant"
-                          ? "WordPress + AI"
-                          : project.title}
-                      </span>
-                      <Arrow diagonal />
-                    </a>
-                  ))}
-                  <a
-                    href="#more-work"
-                    aria-current={
-                      activeProject === "more-work" ? "location" : undefined
-                    }
-                  >
-                    <span>04–08</span>
-                    <span>More projects</span>
-                    <Arrow down />
-                  </a>
-                  <span className="index-footnote">
-                    Web, commerce & everything connected.
-                  </span>
-                </nav>
-              </aside>
-              <div className="work-chapters">
-                {featured.map((project) => (
-                  <FeaturedProject key={project.id} project={project} />
-                ))}
-                <div id="more-work" className="more-work">
-                  <div className="more-work-heading">
-                    <h3>More work. Same intent.</h3>
-                    <span>04–08</span>
-                  </div>
-                  <div className="archive-list">
-                    {archive.map((project) => (
-                      <details
-                        className="archive-project"
-                        key={project.id}
-                        id={project.id}
-                      >
-                        <summary>
-                          <span className="archive-number">
-                            {project.number}
-                          </span>
-                          <span className="archive-title">
-                            {project.title}
-                            <span>{project.category}</span>
-                          </span>
-                          <span className="plus" aria-hidden="true" />
-                        </summary>
-                        <div className="archive-body">
-                          <ProjectPreview project={project} compact />
-                          <div>
-                            <p className="archive-summary">{project.summary}</p>
-                            <h4>The purpose</h4>
-                            <p>{project.purpose}</p>
-                            <h4>My contribution</h4>
-                            <p>{project.contribution}</p>
-                            <h4>The outcome</h4>
-                            <p>{project.outcome}</p>
-                            <ul
-                              className="tech-list"
-                              aria-label={`${project.title} technologies`}
-                            >
-                              {project.technologies.map((tech) => (
-                                <li key={tech}>{tech}</li>
-                              ))}
-                            </ul>
-                            {project.url && (
-                              <a
-                                className="text-link"
-                                href={project.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                Visit live site <Arrow diagonal />
-                                <span className="sr-only">
-                                  {" "}
-                                  for {project.title} (opens in a new tab)
-                                </span>
-                              </a>
-                            )}
-                          </div>
-                        </div>
-                      </details>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <div className="portfolio-content">
+        <SelectedWork />
 
         <section
           className="crossover"
@@ -621,6 +405,7 @@ export default function App() {
             </div>
           </div>
         </section>
+        </div>
       </main>
       <footer className="site-footer">
         <div className="frame">

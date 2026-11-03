@@ -1,5 +1,19 @@
 # Portfolio QA
 
+## Palette refinement — 1 November 2026
+
+The post-hero sections now use navy, blue, and white. The portrait hero, header, project content, layouts, and motion were preserved.
+
+- `npm run build` passed (TypeScript and Vite production build).
+- Browser screenshots were captured before and after at 1440×900, 768×1024, and 390×844. No horizontal overflow was measured.
+- All 52 hero/header elements retain their computed colors, backgrounds, fonts, borders, widths, and heights at all three sizes (0.01px tolerance for SVG bounds).
+- Computed text contrast passes for the portfolio outside the individual illustrative project UIs: secondary text is 10.83:1 on navy and 6.40:1 on white; light blue links are 10.08:1 on navy; pale text is 5.41:1 on cobalt.
+- TravelBit project details and Trident archive details open and close correctly.
+- Impeccable's detector returned no findings for the changed UI files. The new theme stylesheet also passes Taste's source checks. Existing decorative conventions in the original source remain outside this color-only refinement.
+- Screenshots and measurement reports are saved in `outputs/palette-qa/`.
+
+The earlier full-site review below describes the original implementation.
+
 Checked 29 October 2026 against the supplied portfolio brief and resume. The reviewed application was the production build served at `http://127.0.0.1:4173`.
 
 ## Results
