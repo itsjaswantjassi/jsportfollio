@@ -138,6 +138,25 @@
   padding: 0;
 }
 
+.portfolio-content .work-stacking .project-visual.project-visual--video {
+  display: block;
+  aspect-ratio: auto;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--stack-card-ground);
+}
+
+.work-stacking .project-visual--video video {
+  display: block;
+  position: static;
+  width: 100%;
+  height: auto;
+  /* Reserve space before metadata loads, then follow the recording's own ratio. */
+  aspect-ratio: auto 2 / 1;
+  object-fit: contain;
+}
+
 .portfolio-content .work-stacking .preview-drawing {
   width: min(100%, 560px);
 }

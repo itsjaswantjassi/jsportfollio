@@ -36,6 +36,53 @@ function ProjectInformation({ project }: { project: Project }) {
   );
 }
 
+function ProjectVideo({ project, active }: { project: Project; active: boolean }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [failed, setFailed] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || failed) return;
+    let visible = false;
+    const syncPlayback = () => {
+      if (visible && active && !reducedMotion && !document.hidden) {
+        void video.play().catch(() => {
+          // Keep the current frame if the browser blocks muted autoplay.
+        });
+      } else {
+        video.pause();
+      }
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      syncPlayback();
+    }, { threshold: 0.1 });
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const onMotionChange = () => setReducedMotion(motion.matches);
+    observer.observe(video);
+    if (!active || reducedMotion || document.hidden) video.pause();
+    motion.addEventListener("change", onMotionChange);
+    document.addEventListener("visibilitychange", syncPlayback);
+    return () => {
+      observer.disconnect();
+      motion.removeEventListener("change", onMotionChange);
+      document.removeEventListener("visibilitychange", syncPlayback);
+    };
+  }, [active, reducedMotion, failed]);
+
+  if (failed) return <ProjectPreview project={project} />;
+
+  return (
+    <figure className={`project-media project-media--${project.preview}`}>
+      <div className="project-visual project-visual--video">
+        <video ref={videoRef} src={project.video} aria-label={`${project.title} website preview`} autoPlay={active && !reducedMotion} muted loop playsInline preload="metadata" onError={() => setFailed(true)} />
+      </div>
+      <figcaption><span>{project.title}</span><span>Project video</span></figcaption>
+    </figure>
+  );
+}
+
 function indexTitle(project: Project) {
   if (project.id === "wordpress-business-assistant") return "WordPress + AI";
   if (project.id === "ai-seo-automation") return "SEO + automation";
@@ -172,7 +219,7 @@ export default function SelectedWork() {
                       <span className="work-stack-number">{project.number}</span>
                       <span>{project.category}</span>
                     </div>
-                    <ProjectPreview project={project} />
+                    {project.video ? <ProjectVideo project={project} active={activeProject === project.id} /> : <ProjectPreview project={project} />}
                     <div className="work-stack-card-body">
                       <div className="work-stack-copy">
                         <h3 id={`${project.id}-title`}>{project.title}</h3>

@@ -1,11 +1,11 @@
 /* This reference composition belongs only to the capabilities section. */
 .portfolio-content .capabilities-showcase {
-  --capabilities-navy: #0c1b33;
-  --capabilities-blue: #2454e6;
-  --capabilities-muted: #4f6079;
-  --capabilities-rule: #dbe4f2;
+  --capabilities-navy: var(--content-navy);
+  --capabilities-blue: var(--content-blue);
+  --capabilities-muted: var(--muted);
+  --capabilities-rule: var(--line);
   color: var(--capabilities-navy);
-  background: #ffffff;
+  background: var(--paper);
   padding-block: 64px;
 }
 
@@ -15,7 +15,7 @@
   align-items: start;
   gap: clamp(40px, 4vw, 64px);
   width: calc(100% - var(--gutter) * 2);
-  max-width: 1496px;
+  max-width: 1328px;
   margin-inline: auto;
 }
 
@@ -31,20 +31,21 @@
 
 .capabilities-showcase .capabilities-showcase__introduction h2 {
   color: var(--capabilities-navy);
-  font-size: clamp(42px, 5.1vw, 86px);
-  font-weight: 650;
-  line-height: 1.06;
-  letter-spacing: -0.04em;
+  font-size: clamp(42px, 4.2vw, 60px);
+  font-weight: 450;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
 }
 
 .capabilities-showcase .capabilities-showcase__label {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-bottom: 28px;
-  font-size: 18px;
-  line-height: 1.4;
-  font-weight: 700;
+  gap: 16px;
+  margin-bottom: 25px;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: normal;
   text-transform: uppercase;
 }
 
@@ -64,11 +65,11 @@
 }
 
 .capabilities-showcase .capabilities-showcase__intro {
-  margin-top: 27px;
+  margin-top: 24px;
   max-width: 600px;
-  color: var(--capabilities-navy);
-  font-size: clamp(17px, 1.45vw, 24px);
-  line-height: 1.5;
+  color: var(--capabilities-muted);
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 .capabilities-showcase .capabilities-showcase__illustration {
@@ -76,8 +77,8 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  height: clamp(340px, 29vw, 460px);
-  margin: 12px -20px 0;
+  height: clamp(260px, 24vw, 340px);
+  margin: 12px auto 0;
 }
 
 .capabilities-showcase .capabilities-showcase__curve {
@@ -97,7 +98,7 @@
   max-width: none;
   object-fit: contain;
   transform-origin: 50% 62%;
-  scale: 1.3;
+  scale: 1;
   pointer-events: none;
 }
 
@@ -139,83 +140,83 @@
 
 .capabilities-showcase ::selection {
   color: var(--capabilities-navy);
-  background: #c5d5ff;
+  background: var(--content-blue-light);
 }
 
 .capabilities-showcase .capabilities-showcase__service {
   --capabilities-row-ink: var(--capabilities-navy);
-  --capabilities-row-muted: var(--capabilities-navy);
+  --capabilities-row-muted: var(--capabilities-muted);
   display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
-  column-gap: 28px;
+  grid-template-columns: 28px minmax(0, 1fr);
+  column-gap: 16px;
   position: relative;
-  padding: 28px 34px;
+  padding: 22px 26px;
   color: var(--capabilities-row-ink);
-  background: #ffffff;
+  background: var(--paper);
   transition: background-color 180ms ease;
 }
 
 .capabilities-showcase .capabilities-showcase__service:not(.capabilities-showcase__service--featured):is(:hover, :focus-within) {
-  background: #f3f7ff;
+  background: var(--content-pale);
 }
 
 .capabilities-showcase .capabilities-showcase__service + .capabilities-showcase__service {
   border-top: 1px solid var(--capabilities-rule);
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .capabilities-showcase .capabilities-showcase__service--featured {
-  --capabilities-row-ink: #ffffff;
-  --capabilities-row-muted: #d8e3f5;
+  --capabilities-row-ink: var(--content-white);
+  --capabilities-row-muted: var(--content-text-light);
   background: var(--capabilities-navy);
 }
 
 .capabilities-showcase .capabilities-showcase__service--featured::before {
   content: "";
   position: absolute;
-  top: 33px;
+  top: 22px;
   left: -8px;
   width: 8px;
-  height: 55px;
+  height: 36px;
   background: var(--capabilities-blue);
 }
 
 .capabilities-showcase .capabilities-showcase__number {
-  padding-top: 0;
+  padding-top: 5px;
   color: var(--capabilities-blue);
-  font-size: clamp(30px, 2.6vw, 44px);
+  font-size: 13px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
-  line-height: 1.25;
+  line-height: 1.5;
 }
 
 .capabilities-showcase .capabilities-showcase__service--featured .capabilities-showcase__number {
-  color: #ffffff;
+  color: var(--content-white);
 }
 
 .capabilities-showcase .capabilities-showcase__service-content h3 {
   color: var(--capabilities-row-ink);
-  font-size: clamp(27px, 2.85vw, 46px);
-  font-weight: 650;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
+  font-size: clamp(25px, 2.3vw, 33px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
 }
 
 .capabilities-showcase .capabilities-showcase__description {
   color: var(--capabilities-row-muted);
-  font-size: clamp(16px, 1.2vw, 20px);
-  line-height: 1.5;
-  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 12px;
 }
 
 .capabilities-showcase .capabilities-showcase__skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px 17px;
-  margin-top: 20px;
+  gap: 6px 12px;
+  margin-top: 12px;
   color: var(--capabilities-row-muted);
-  font-size: 13px;
-  line-height: 1.65;
+  font-size: 11px;
+  line-height: 1.4;
 }
 
 .capabilities-showcase .capabilities-showcase__skills > li {
@@ -251,8 +252,8 @@
 }
 
 @keyframes capabilities-blue-breath {
-  0%, 100% { color: #2454e6; }
-  50% { color: #3965e9; }
+  0%, 100% { color: var(--content-blue); }
+  50% { color: var(--content-blue-hover); }
 }
 
 @keyframes capabilities-tab-breath {
@@ -262,33 +263,34 @@
 
 @media (max-width: 1100px) and (min-width: 901px) {
   .capabilities-showcase .capabilities-showcase__frame { gap: 34px; }
-  .capabilities-showcase .capabilities-showcase__introduction h2 { font-size: 52px; }
-  .capabilities-showcase .capabilities-showcase__service { grid-template-columns: 34px minmax(0, 1fr); column-gap: 15px; padding-inline: 26px; }
+  .capabilities-showcase .capabilities-showcase__service { padding-inline: 22px; }
+}
+
+@media (max-width: 1199px) {
   .capabilities-showcase .capabilities-showcase__service-content h3 { font-size: 28px; }
 }
 
 @media (max-width: 900px) {
   .capabilities-showcase .capabilities-showcase__frame { grid-template-columns: 1fr; gap: 40px; }
   .capabilities-showcase .capabilities-showcase__services { margin-top: 0; }
-  .capabilities-showcase .capabilities-showcase__introduction h2 { font-size: clamp(42px, 7vw, 62px); }
-  .capabilities-showcase .capabilities-showcase__illustration { height: clamp(320px, 58vw, 460px); max-width: 600px; margin: 16px auto 0; }
-  .capabilities-showcase .capabilities-showcase__illustration img { scale: 1; }
-  .capabilities-showcase .capabilities-showcase__service { padding-block: 32px; }
+  .capabilities-showcase .capabilities-showcase__illustration { height: clamp(250px, 34vw, 310px); max-width: 500px; margin: 16px auto 0; }
+}
+
+@media (max-width: 680px) {
+  .capabilities-showcase .capabilities-showcase__service-content h3 { font-size: 27px; }
+  .capabilities-showcase .capabilities-showcase__description { font-size: 16px; }
 }
 
 @media (max-width: 560px) {
   .portfolio-content .capabilities-showcase { padding-block: 64px; }
-  .capabilities-showcase .capabilities-showcase__frame { gap: 30px; }
-  .capabilities-showcase .capabilities-showcase__introduction h2 { font-size: clamp(36px, 9.2vw, 48px); }
-  .capabilities-showcase .capabilities-showcase__intro { margin-top: 23px; }
+  .capabilities-showcase .capabilities-showcase__frame { gap: 26px; }
+  .capabilities-showcase .capabilities-showcase__introduction h2 { font-size: 40px; }
+  .capabilities-showcase .capabilities-showcase__intro { margin-top: 20px; }
   .capabilities-showcase .capabilities-showcase__intro br { display: none; }
-  .capabilities-showcase .capabilities-showcase__illustration { height: clamp(250px, 74vw, 380px); margin-top: 18px; }
-  .capabilities-showcase .capabilities-showcase__service { grid-template-columns: 34px minmax(0, 1fr); column-gap: 12px; padding: 27px 20px; }
-  .capabilities-showcase .capabilities-showcase__service-content h3 { font-size: clamp(23px, 5.7vw, 28px); }
-  .capabilities-showcase .capabilities-showcase__number { font-size: 25px; padding-top: 0; }
-  .capabilities-showcase .capabilities-showcase__description { margin-top: 14px; }
-  .capabilities-showcase .capabilities-showcase__skills { gap: 8px 14px; margin-top: 18px; }
-  .capabilities-showcase .capabilities-showcase__service--featured::before { top: 27px; left: -6px; width: 6px; height: 48px; }
+  .capabilities-showcase .capabilities-showcase__illustration { height: clamp(220px, 54vw, 280px); margin-top: 14px; }
+  .capabilities-showcase .capabilities-showcase__service { grid-template-columns: 24px minmax(0, 1fr); column-gap: 12px; padding: 17px; }
+  .capabilities-showcase .capabilities-showcase__description { margin-top: 12px; }
+  .capabilities-showcase .capabilities-showcase__service--featured::before { top: 17px; left: -6px; width: 6px; height: 36px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

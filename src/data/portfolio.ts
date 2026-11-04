@@ -24,6 +24,7 @@ export interface Project {
   outcome: string;
   technologies: string[];
   url?: string;
+  video?: string;
   image: string;
   imageAlt: string;
   preview: ProjectPreview;
@@ -67,6 +68,7 @@ export const projects: Project[] = [
       "GraphQL",
     ],
     url: "https://travelbitholidays.com/",
+    video: "/project-video/travelbit-holidays.mp4",
     image: "/projects/travelbit-holidays.webp",
     imageAlt: "TravelBit Holidays travel website and booking CRM screenshot",
     preview: "travel",
@@ -107,6 +109,7 @@ export const projects: Project[] = [
       "A working Shopify storefront with responsive layouts, clear product presentation, and ongoing updates.",
     technologies: ["Shopify", "Shopify Liquid", "Responsive design"],
     url: "https://matapayals.com/",
+    video: "/project-video/mata-payals.mp4",
     image: "/projects/mata-payals.webp",
     imageAlt: "Mata Payals Shopify storefront screenshot",
     preview: "commerce",
@@ -145,6 +148,8 @@ export const projects: Project[] = [
     outcome:
       "A maintained platform with live database-driven information and structured data collection.",
     technologies: ["WordPress", "PHP", "JavaScript", "MySQL", "WP-CLI"],
+    url: "https://khokhofederation.in/",
+    video: "/project-video/kho-kho-federation.mp4",
     image: "/projects/kho-kho-federation.webp",
     imageAlt: "Kho Kho Federation of India website screenshot",
     preview: "sport",
@@ -199,6 +204,8 @@ export const projects: Project[] = [
       "Technical SEO",
     ],
     image: "/projects/trident-valves.webp",
+    url: "https://tridentvalves.com/",
+    video: "/project-video/trident-valves.mp4",
     imageAlt: "Trident Valves industrial product website screenshot",
     preview: "industrial",
     featured: false,
@@ -217,6 +224,7 @@ export const projects: Project[] = [
       "A working Shopify website with responsive layouts and maintained content.",
     technologies: ["Shopify", "Shopify Liquid", "Responsive design"],
     url: "https://zohrascoffeeshop.com/",
+    video: "/project-video/zohras-coffee-shop.mp4",
     image: "/projects/zohras-coffee-shop.webp",
     imageAlt: "Zohra’s Coffee Shop Shopify website screenshot",
     preview: "coffee",
