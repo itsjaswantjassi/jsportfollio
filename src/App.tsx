@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PortraitHero from "./components/PortraitHero";
 import SelectedWork from "./components/SelectedWork";
 import Capabilities from "./components/Capabilities";
+import TechnologySkills from "./components/TechnologySkills";
 import {
   education,
   experience,
@@ -223,6 +224,8 @@ export default function App() {
         </section>
 
         <Capabilities />
+
+        <TechnologySkills />
 
         <section
           className="experience-section section-pad"

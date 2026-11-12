@@ -1,0 +1,119 @@
+.portfolio-content .technology-skills {
+  color: var(--ink);
+  background: var(--content-pale);
+}
+
+.technology-skills .technology-skills__intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 38px;
+}
+
+.technology-skills .technology-skills__intro h2 {
+  font-size: clamp(40px, 4.2vw, 60px);
+  font-weight: 450;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
+}
+
+.technology-skills .technology-skills__intro p {
+  max-width: 350px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.technology-skills .technology-skills__groups {
+  display: grid;
+  gap: 28px;
+}
+
+.technology-skills .technology-skills__group {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  align-items: start;
+  gap: 32px;
+}
+
+.technology-skills .technology-skills__group h3 {
+  padding-top: 11px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.technology-skills .technology-skills__group ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-width: 0;
+}
+
+.technology-skills .technology-skills__group li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 1.5;
+}
+
+.technology-skills .technology-skills__icon {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  color: var(--cobalt);
+}
+
+.technology-skills abbr {
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  .technology-skills .technology-skills__intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .technology-skills .technology-skills__intro p {
+    max-width: 48ch;
+  }
+
+  .technology-skills .technology-skills__group {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .technology-skills .technology-skills__intro {
+    margin-bottom: 32px;
+  }
+
+  .technology-skills .technology-skills__group {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .technology-skills .technology-skills__group h3 {
+    padding-top: 0;
+  }
+
+  .technology-skills .technology-skills__group ul {
+    gap: 8px;
+  }
+
+  .technology-skills .technology-skills__group li {
+    padding-inline: 12px;
+  }
+}
