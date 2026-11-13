@@ -1,5 +1,5 @@
-// Technology names verified against public/Jaswant_Singh_Resume.pdf.
-// Keep named tools separate from broader services or unlisted AI products.
+// Technology names from public/Jaswant_Singh_Resume.pdf and the user's additions.
+// Keep named tools separate from broader services or unconfirmed AI products.
 export const technologySkills = [
   {
     id: "languages",
@@ -49,13 +49,16 @@ export const technologySkills = [
     items: [
       { name: "Gemini API", icon: "googlegemini" },
       { name: "Google AI Studio", icon: "googleaistudio" },
+      { name: "n8n", icon: "n8n" },
+      { name: "Zapier", icon: "zapier" },
+      { name: "Google Opal", icon: "workflow" },
+      { name: "Make", icon: "make" },
     ],
   },
   {
     id: "design",
-    title: "Design & analytics",
+    title: "Analytics & performance",
     items: [
-      { name: "Figma", icon: "figma" },
       { name: "Google Analytics", icon: "googleanalytics" },
       { name: "Google Search Console", icon: "googlesearchconsole" },
       { name: "Core Web Vitals", icon: "performance" },
@@ -67,6 +70,11 @@ export const technologySkills = [
     items: [
       { name: "Git", icon: "git" },
       { name: "GitHub", icon: "github" },
+      { name: "Figma", icon: "figma" },
+      { name: "Claude Code", icon: "claude" },
+      { name: "Windsurf", icon: "windsurf" },
+      { name: "JetBrains IDEs", icon: "jetbrains" },
+      { name: "VS Code", icon: "visualstudiocode" },
     ],
   },
 ] as const;

@@ -10,6 +10,7 @@ const conceptIcons: Record<string, string> = {
   terminal: "M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm2 4 4 4-4 4m7 0h5",
   liquid: "M12 2C10 6 5 10 5 15a7 7 0 0 0 14 0c0-5-5-9-7-13Zm-3 13a3 3 0 0 0 3 3",
   performance: "M4.2 17.8a10 10 0 1 1 15.6 0M12 12l5-5M4 12h1m7-8v1m7 7h1M9 20h6",
+  workflow: "M2 9h6v6H2Zm14-7h6v6h-6Zm0 14h6v6h-6ZM8 12h3a2 2 0 0 0 2-2V7a2 2 0 0 1 2-2h1M8 12h3a2 2 0 0 1 2 2v3a2 2 0 0 0 2 2h1",
 };
 
 function TechnologyIcon({ name }: { name: string }) {
