@@ -149,7 +149,7 @@ export default function App() {
             aria-label="Jaswant Singh, back to top"
           >
             <span className="monogram" aria-hidden="true">
-              js<span>.</span>
+              JS<span>.</span>
             </span>
             <span>
               Jaswant Singh
@@ -202,169 +202,169 @@ export default function App() {
         <PortraitHero />
 
         <div className="portfolio-content">
-        <SelectedWork />
+          <SelectedWork />
 
-        <section
-          className="crossover"
-          aria-label="Connecting web, commerce, and AI"
-        >
-          <h2 className="sr-only">Connecting web, commerce, and AI</h2>
-          <div aria-hidden="true">
-            <div className="crossover-line crossover-line--one">
-              WEB / COMMERCE
-            </div>
-            <div className="crossover-line crossover-line--two">
-              COMMERCE / AI
-            </div>
-          </div>
-          <p>
-            Good things happen <br />
-            when the pieces connect.
-          </p>
-        </section>
-
-        <Capabilities />
-
-        <TechnologySkills />
-
-        <section
-          className="experience-section section-pad"
-          id="experience"
-          aria-labelledby="experience-title"
-        >
-          <div className="frame experience-layout">
-            <div className="experience-intro" data-reveal>
-              <h2 id="experience-title">
-                Experience,
-                <br />
-                put to work.
-              </h2>
-              <p>
-                From business websites to AI integrations. A foundation built by
-                making things that people use.
-              </p>
-              <a className="text-link" href={profile.resumeUrl} download>
-                Download my resume <Arrow down />
-              </a>
-            </div>
-            <div className="experience-list">
-              {experience.map((job) => (
-                <article
-                  className="experience-item"
-                  key={job.company}
-                  data-reveal
-                >
-                  <span className="job-period">{job.period}</span>
-                  <h3>{job.role}</h3>
-                  <p className="job-company">{job.company}</p>
-                  <p className="job-description">{job.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section
-          className="about-section section-pad frame"
-          id="about"
-          aria-labelledby="about-title"
-        >
-          <div className="about-main">
-            <div className="about-name-art" aria-hidden="true">
-              <span>jaswant</span>
-              <span>
-                singh<span className="about-name-dot">.</span>
-              </span>
-              <div className="about-place">
-                <span className="location-dot" />
-                New Delhi, India
+          <section
+            className="crossover"
+            aria-label="Connecting web, commerce, and AI"
+          >
+            <h2 className="sr-only">Connecting web, commerce, and AI</h2>
+            <div aria-hidden="true">
+              <div className="crossover-line crossover-line--one">
+                WEB / COMMERCE
+              </div>
+              <div className="crossover-line crossover-line--two">
+                COMMERCE / AI
               </div>
             </div>
-            <div className="about-copy" data-reveal>
-              <h2 id="about-title">
-                Thoughtful by nature.
-                <br />
-                Practical by choice.
-              </h2>
-              <p>
-                I’m Jaswant Singh, a New Delhi–based developer working where
-                websites, commerce, and AI come together.
-              </p>
-              <p>
-                I enjoy the whole journey: understanding what a business needs,
-                building the right experience, and making the details work.
-                Sometimes that’s a well-built Shopify store. Sometimes it’s a
-                custom WordPress plugin that takes a repetitive task off
-                someone’s plate.
-              </p>
-              <p>
-                My focus is simple: build things that are clear, useful, and
-                easy to work with.
-              </p>
-            </div>
-          </div>
-          <div className="education-layout">
-            <h3>Learning the foundations.</h3>
-            <div>
-              {education.map((item) => (
-                <article className="education-item" key={item.title}>
-                  <span>{item.period}</span>
-                  <h4>{item.title}</h4>
-                  <p>{item.institution}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+            <p>
+              Good things happen <br />
+              when the pieces connect.
+            </p>
+          </section>
 
-        <section
-          className="contact-section"
-          id="contact"
-          aria-labelledby="contact-title"
-        >
-          <div className="frame">
-            <div className="contact-top">
-              <h2 id="contact-title">
-                Have something
-                <br />
-                in mind?
-              </h2>
-              <a
-                className="contact-arrow"
-                href={`mailto:${profile.email}`}
-                aria-label="Email Jaswant about your project"
-              >
-                <Arrow diagonal />
-              </a>
+          <Capabilities />
+
+          <TechnologySkills />
+
+          <section
+            className="experience-section section-pad"
+            id="experience"
+            aria-labelledby="experience-title"
+          >
+            <div className="frame experience-layout">
+              <div className="experience-intro" data-reveal>
+                <h2 id="experience-title">
+                  Experience,
+                  <br />
+                  put to work.
+                </h2>
+                <p>
+                  From business websites to AI integrations. A foundation built by
+                  making things that people use.
+                </p>
+                <a className="text-link" href={profile.resumeUrl} download>
+                  Download my resume <Arrow down />
+                </a>
+              </div>
+              <div className="experience-list">
+                {experience.map((job) => (
+                  <article
+                    className="experience-item"
+                    key={job.company}
+                    data-reveal
+                  >
+                    <span className="job-period">{job.period}</span>
+                    <h3>{job.role}</h3>
+                    <p className="job-company">{job.company}</p>
+                    <p className="job-description">{job.description}</p>
+                  </article>
+                ))}
+              </div>
             </div>
-            <div className="contact-bottom">
-              <p>
-                A website, a store, or a smarter way to work.
-                <br />
-                Let’s make it happen.
-              </p>
-              <div className="contact-links">
-                <a className="contact-email" href={`mailto:${profile.email}`}>
-                  {profile.email}
+          </section>
+
+          <section
+            className="about-section section-pad frame"
+            id="about"
+            aria-labelledby="about-title"
+          >
+            <div className="about-main">
+              <div className="about-name-art" aria-hidden="true">
+                <span>jaswant</span>
+                <span>
+                  singh<span className="about-name-dot">.</span>
+                </span>
+                <div className="about-place">
+                  <span className="location-dot" />
+                  New Delhi, India
+                </div>
+              </div>
+              <div className="about-copy" data-reveal>
+                <h2 id="about-title">
+                  Thoughtful by nature.
+                  <br />
+                  Practical by choice.
+                </h2>
+                <p>
+                  I’m Jaswant Singh, a New Delhi–based developer working where
+                  websites, commerce, and AI come together.
+                </p>
+                <p>
+                  I enjoy the whole journey: understanding what a business needs,
+                  building the right experience, and making the details work.
+                  Sometimes that’s a well-built Shopify store. Sometimes it’s a
+                  custom WordPress plugin that takes a repetitive task off
+                  someone’s plate.
+                </p>
+                <p>
+                  My focus is simple: build things that are clear, useful, and
+                  easy to work with.
+                </p>
+              </div>
+            </div>
+            <div className="education-layout">
+              <h3>Learning the foundations.</h3>
+              <div>
+                {education.map((item) => (
+                  <article className="education-item" key={item.title}>
+                    <span>{item.period}</span>
+                    <h4>{item.title}</h4>
+                    <p>{item.institution}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section
+            className="contact-section"
+            id="contact"
+            aria-labelledby="contact-title"
+          >
+            <div className="frame">
+              <div className="contact-top">
+                <h2 id="contact-title">
+                  Have something
+                  <br />
+                  in mind?
+                </h2>
+                <a
+                  className="contact-arrow"
+                  href={`mailto:${profile.email}`}
+                  aria-label="Email Jaswant about your project"
+                >
                   <Arrow diagonal />
                 </a>
-                <div>
-                  <a href={profile.phoneHref}>{profile.phone}</a>
-                  {profile.linkedin && (
-                    <a
-                      href={profile.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      LinkedIn <Arrow diagonal />
-                      <span className="sr-only"> (opens in a new tab)</span>
-                    </a>
-                  )}
+              </div>
+              <div className="contact-bottom">
+                <p>
+                  A website, a store, or a smarter way to work.
+                  <br />
+                  Let’s make it happen.
+                </p>
+                <div className="contact-links">
+                  <a className="contact-email" href={`mailto:${profile.email}`}>
+                    {profile.email}
+                    <Arrow diagonal />
+                  </a>
+                  <div>
+                    <a href={profile.phoneHref}>{profile.phone}</a>
+                    {profile.linkedin && (
+                      <a
+                        href={profile.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        LinkedIn <Arrow diagonal />
+                        <span className="sr-only"> (opens in a new tab)</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
         </div>
       </main>
       <footer className="site-footer">
