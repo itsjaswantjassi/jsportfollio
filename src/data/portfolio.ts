@@ -90,6 +90,7 @@ export const projects: Project[] = [
     outcome:
       "Generates SEO titles, meta descriptions, product and service descriptions, FAQs, social captions, blog outlines, CTAs, and keyword suggestions from existing page content.",
     technologies: ["WordPress", "PHP", "JavaScript", "REST API", "Gemini API"],
+    video: "/project-video/AI-Powered-WordPress-Business-Assistant.mp4",
     image: "/projects/wordpress-business-assistant.webp",
     imageAlt:
       "AI-Powered WordPress Business Assistant plugin interface screenshot",
@@ -131,6 +132,7 @@ export const projects: Project[] = [
     outcome:
       "Works with Elementor, Gutenberg, and other page builders on both posts and pages.",
     technologies: ["WordPress", "Gemini API", "Elementor", "Gutenberg"],
+    video: "/project-video/AI-SEO-&-Content-System.mp4",
     image: "/projects/ai-seo-automation.webp",
     imageAlt: "AI SEO & Content Automation System WordPress plugin screenshot",
     preview: "automation",
