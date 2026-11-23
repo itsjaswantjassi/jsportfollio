@@ -5,9 +5,9 @@ import PortraitHero from "./components/PortraitHero";
 import SelectedWork from "./components/SelectedWork";
 import Capabilities from "./components/Capabilities";
 import TechnologySkills from "./components/TechnologySkills";
+import Experience from "./components/Experience";
 import {
   education,
-  experience,
   profile,
 } from "./data/portfolio";
 
@@ -204,6 +204,10 @@ export default function App() {
         <div className="portfolio-content">
           <SelectedWork />
 
+          <TechnologySkills />
+
+          <Experience />
+
           <section
             className="crossover"
             aria-label="Connecting web, commerce, and AI"
@@ -224,45 +228,6 @@ export default function App() {
           </section>
 
           <Capabilities />
-
-          <TechnologySkills />
-
-          <section
-            className="experience-section section-pad"
-            id="experience"
-            aria-labelledby="experience-title"
-          >
-            <div className="frame experience-layout">
-              <div className="experience-intro" data-reveal>
-                <h2 id="experience-title">
-                  Experience,
-                  <br />
-                  put to work.
-                </h2>
-                <p>
-                  From business websites to AI integrations. A foundation built by
-                  making things that people use.
-                </p>
-                <a className="text-link" href={profile.resumeUrl} download>
-                  Download my resume <Arrow down />
-                </a>
-              </div>
-              <div className="experience-list">
-                {experience.map((job) => (
-                  <article
-                    className="experience-item"
-                    key={job.company}
-                    data-reveal
-                  >
-                    <span className="job-period">{job.period}</span>
-                    <h3>{job.role}</h3>
-                    <p className="job-company">{job.company}</p>
-                    <p className="job-description">{job.description}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </section>
 
           <section
             className="about-section section-pad frame"

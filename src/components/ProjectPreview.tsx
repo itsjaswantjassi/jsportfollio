@@ -302,6 +302,24 @@ export default function ProjectPreview({
   const [failedImage, setFailedImage] = useState<string | null>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
   const missing = failedImage === project.image;
+  // Live website captures fill the banner directly at their original proportions.
+  if (project.preview === "website" || project.video) {
+    if (missing) return null;
+    return (
+      <figure className="project-media stack-project-banner">
+        <img
+          src={project.image}
+          alt={project.imageAlt}
+          width={project.imageSize?.[0]}
+          height={project.imageSize?.[1]}
+          loading="lazy"
+          decoding="async"
+          onError={() => setFailedImage(project.image)}
+        />
+        <figcaption><span>{project.title}</span><span>Website preview</span></figcaption>
+      </figure>
+    );
+  }
   return (
     <figure
       className={`project-media project-media--${project.preview}${compact ? " project-media--compact" : ""}`}

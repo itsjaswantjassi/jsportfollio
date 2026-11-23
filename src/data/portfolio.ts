@@ -11,7 +11,8 @@ export type ProjectPreview =
   | "sport"
   | "health"
   | "industrial"
-  | "coffee";
+  | "coffee"
+  | "website";
 
 export interface Project {
   id: string;
@@ -20,12 +21,13 @@ export interface Project {
   category: string;
   summary: string;
   purpose: string;
-  contribution: string;
+  contribution?: string;
   outcome: string;
   technologies: string[];
   url?: string;
   video?: string;
   image: string;
+  imageSize?: readonly [width: number, height: number];
   imageAlt: string;
   preview: ProjectPreview;
   featured: boolean;
@@ -108,7 +110,7 @@ export const projects: Project[] = [
     outcome:
       "A working Shopify storefront with responsive layouts, clear product presentation, and ongoing updates.",
     technologies: ["Shopify", "Shopify Liquid", "Responsive design"],
-    url: "https://matapayals.com/",
+    url: "https://www.matapayals.com/",
     video: "/project-video/mata-payals.mp4",
     image: "/projects/mata-payals.webp",
     imageAlt: "Mata Payals Shopify storefront screenshot",
@@ -178,8 +180,10 @@ export const projects: Project[] = [
       "Figma",
     ],
     image: "/projects/universal-remedies.webp",
+    imageSize: [1440, 760],
+    url: "https://universalremedies.com/",
     imageAlt: "Universal Remedies Ayurvedic e-commerce website screenshot",
-    preview: "health",
+    preview: "website",
     featured: false,
   },
   {
@@ -228,6 +232,74 @@ export const projects: Project[] = [
     image: "/projects/zohras-coffee-shop.webp",
     imageAlt: "Zohra’s Coffee Shop Shopify website screenshot",
     preview: "coffee",
+    featured: false,
+  },
+  {
+    id: "aldeko-panels",
+    number: "09",
+    title: "Aldeko Panels",
+    category: "Architectural materials",
+    summary:
+      "A materials catalogue for architects and designers exploring aluminium composite panels and decorative finishes.",
+    purpose: "Help specifiers find cladding and surface finishes for their projects.",
+    outcome: "Visitors can explore the panel collections and open the corresponding product catalogues.",
+    technologies: ["WordPress", "Elementor"],
+    url: "https://aldekopanels.com/",
+    image: "/projects/aldeko-panels.webp",
+    imageSize: [1440, 760],
+    imageAlt: "Architectural panel collections on the Aldeko Panels website",
+    preview: "website",
+    featured: false,
+  },
+  {
+    id: "riteway-medical",
+    number: "10",
+    title: "RiteWay Medical",
+    category: "Medical supplies store",
+    summary:
+      "An online store for home healthcare supplies, from wheelchairs and mobility aids to respiratory and wound care products.",
+    purpose: "Help shoppers locate equipment and supplies for a specific care need.",
+    outcome: "Shoppers can search for a product, browse by care category, and order online.",
+    technologies: ["WordPress", "WooCommerce", "Flatsome"],
+    url: "https://ritewaymed.com/",
+    image: "/projects/riteway-medical.webp",
+    imageSize: [1440, 810],
+    imageAlt: "RiteWay Medical storefront featuring a wheelchair and home healthcare supplies",
+    preview: "website",
+    featured: false,
+  },
+  {
+    id: "dugar-polytex",
+    number: "11",
+    title: "Dugar Polytex",
+    category: "Industrial packaging",
+    summary:
+      "A manufacturer's catalogue of woven polypropylene bags and laminated packaging for bulk orders.",
+    purpose: "Give packaging buyers a way to review bag types and manufacturing capabilities.",
+    outcome: "Buyers can explore the packaging range and request a quote from the manufacturer.",
+    technologies: ["WordPress", "Elementor", "WooCommerce"],
+    url: "https://dugarpolytex.com/",
+    image: "/projects/dugar-polytex.webp",
+    imageSize: [1440, 810],
+    imageAlt: "Dugar Polytex website introducing its industrial packaging range",
+    preview: "website",
+    featured: false,
+  },
+  {
+    id: "little-goonz",
+    number: "12",
+    title: "Little Goonz",
+    category: "Children’s products",
+    summary:
+      "A children's storefront featuring walkers and scooters, with a separate catalogue and dealer programme.",
+    purpose: "Help families browse children's products and retailers discover the brand's range.",
+    outcome: "Visitors can explore the shop, read the catalogue, and find dealer information.",
+    technologies: ["Bootstrap", "jQuery", "GSAP"],
+    url: "https://littlegoonz.com/",
+    image: "/projects/little-goonz.webp",
+    imageSize: [1440, 800],
+    imageAlt: "Little Goonz homepage featuring a child in a four-in-one walker",
+    preview: "website",
     featured: false,
   },
 ];

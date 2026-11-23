@@ -29,7 +29,7 @@ function ProjectInformation({ project }: { project: Project }) {
       </summary>
       <div className="stack-project-story">
         <div><h4>The purpose</h4><p>{project.purpose}</p></div>
-        <div><h4>My contribution</h4><p>{project.contribution}</p></div>
+        {project.contribution && <div><h4>My contribution</h4><p>{project.contribution}</p></div>}
         <div><h4>The outcome</h4><p>{project.outcome}</p></div>
       </div>
     </details>
@@ -76,7 +76,7 @@ function ProjectVideo({ project, active }: { project: Project; active: boolean }
   return (
     <figure className={`project-media project-media--${project.preview}`}>
       <div className="project-visual project-visual--video">
-        <video ref={videoRef} src={project.video} aria-label={`${project.title} website preview`} autoPlay={active && !reducedMotion} muted loop playsInline preload="metadata" onError={() => setFailed(true)} />
+        <video ref={videoRef} src={project.video} poster={project.image} aria-label={`${project.title} website preview`} autoPlay={active && !reducedMotion} muted loop playsInline preload="metadata" onError={() => setFailed(true)} />
       </div>
       <figcaption><span>{project.title}</span><span>Project video</span></figcaption>
     </figure>
@@ -92,7 +92,21 @@ function indexTitle(project: Project) {
 
 export default function SelectedWork() {
   const rootRef = useRef<HTMLElement>(null);
+  const indexRef = useRef<HTMLElement>(null);
   const [activeProject, setActiveProject] = useState(projects[0].id);
+  const currentIndex = projects.findIndex((project) => project.id === activeProject);
+
+  useEffect(() => {
+    const nav = indexRef.current;
+    if (!nav || nav.scrollHeight <= nav.clientHeight || nav.querySelector(":focus-visible")) return;
+    const active = nav.querySelector('[aria-current="location"]');
+    if (!active) return;
+    const list = nav.getBoundingClientRect();
+    const item = active.getBoundingClientRect();
+    // Move only the index. Scrolling an anchor into view here would also move the page.
+    if (item.top < list.top) nav.scrollTop += item.top - list.top;
+    else if (item.bottom > list.bottom) nav.scrollTop += item.bottom - list.bottom;
+  }, [activeProject]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -193,7 +207,7 @@ export default function SelectedWork() {
             <h2 id="work-title">Selected work<span className="heading-period">.</span></h2>
             <p>Different businesses.<br />The same care in the details.</p>
           </div>
-          <nav className="project-index" aria-label="Project index">
+          <nav ref={indexRef} className="project-index" aria-label="Project index">
             <span className="index-label">Explore the work</span>
             {projects.map((project) => (
               <a key={project.id} href={`#${project.id}`} aria-label={`${project.number}. ${project.title}`} aria-current={activeProject === project.id ? "location" : undefined}>
@@ -203,7 +217,15 @@ export default function SelectedWork() {
               </a>
             ))}
           </nav>
-          <p className="work-stack-footnote">Web, commerce &amp;<br />everything connected.</p>
+          <div className="work-stack-footer">
+            <p className="work-stack-footnote">Web, commerce &amp;<br />everything connected.</p>
+            <div className="work-progress" aria-hidden="true">
+              <span className="work-progress-count">{projects[currentIndex].number}<span> / {projects.length}</span></span>
+              <div className="work-progress-track">
+                <span style={{ transform: `scaleX(${(currentIndex + 1) / projects.length})` }} />
+              </div>
+            </div>
+          </div>
         </aside>
 
         <div className="work-stack" aria-label="Selected projects">
